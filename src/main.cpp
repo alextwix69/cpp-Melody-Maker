@@ -1,13 +1,22 @@
 #include <iostream>
+#include <string>
+#include "../include/commonfuncs.h"
 
 int main(int argc, char* argv[]) {
-    if (argc == 1) {
-        std::cout 
-        << "For correct usage, run the program as:" 
-        << std::endl 
-        << "./melodyMaker <input file path> <output file name>";
-        //return 1;
+    if (argc < 2) {
+        printUsage();
+        return 1;
     }
-    std::cout << argc;
+
+    std::string inputPath = argv[1];
+    std::string outputName = "sound";
+
+    if (argc >= 3) {
+        outputName = argv[2];
+    }
+
+    SoundMaker sm;
+
+    
     return 1;
 }
